@@ -25,5 +25,16 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
 
     // Set amount in deshboard
     document.getElementById("available-balance").innerText = totalAvailableBalance;
-    
+})
+
+
+// Toggling functionality
+document.getElementById('add-money-feature-btn').addEventListener("click", function() {
+    document.getElementById('cashout-container').style.display = "none";
+    document.getElementById('add-money-container').style.display = "block";
+})
+
+document.getElementById('cashout-feature-btn').addEventListener("click", function() {
+    document.getElementById('cashout-container').style.display = "block";
+    document.getElementById('add-money-container').style.display = "none";
 })
