@@ -28,6 +28,17 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
 })
 
 
+document.getElementById("cashout-btn").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const cashoutAmount = parseInt(document.getElementById("cashout-amount").value);
+    const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+
+    const totalNewAvailableBalance = availableBalance - cashoutAmount;
+    document.getElementById("available-balance").innerText = totalNewAvailableBalance;
+})
+
+
 // Toggling functionality
 document.getElementById('add-money-feature-btn').addEventListener("click", function() {
     document.getElementById('cashout-container').style.display = "none";
