@@ -26,6 +26,17 @@ function handleToggle(id) {
     document.getElementById(id).style.display = "block";
 }
 
+function handleActiveButton(id) {
+    const activeButtons = document.getElementsByClassName("active-buttons");
+    for (const activeButton of activeButtons) {
+        activeButton.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+        activeButton.classList.add("border-gray-100")
+    }
+
+    document.getElementById(id).classList.remove("border-gray-100");
+    document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]");
+}
+
 // Add money functionality
 document.getElementById('add-money-btn').addEventListener('click', function(event) {
     event.preventDefault();
@@ -68,14 +79,17 @@ document.getElementById("cashout-btn").addEventListener("click", function(event)
 // Toggling functionality
 document.getElementById('add-money-feature-btn').addEventListener("click", function() {
     handleToggle("add-money-container");
+    handleActiveButton('add-money-feature-btn');
 })
 
 document.getElementById('cashout-feature-btn').addEventListener("click", function() {
     handleToggle("cashout-container");
+    handleActiveButton('cashout-feature-btn');
 })
 
 document.getElementById('send-money-feature-btn').addEventListener("click", function() {
     handleToggle("send-money-container");
+    handleActiveButton('send-money-feature-btn');
 })
 
 
